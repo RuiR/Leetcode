@@ -1,13 +1,19 @@
 Explanation and thoughts of Linked List Cycle
 =======
 
-## Sub-heading
+This set of problems are trying to find if there is a cycle in a linked list, and
+find out where is the start of the cycle and other related problems. There are two
+ways to handle this problem.
+
+## Hash set
 
 Paragraphs are separated
 by a blank line.
 
 Two spaces at the end of a line  
 produces a line break.
+
+## Two pointers
 
 Text attributes _italic_,
 **bold**, `monospace`.
@@ -32,7 +38,7 @@ A [link][example].
 
   [example]: http://example.com
 
-![Image](Image_icon.png "icon")
+![Image](linked_list_cycle.png "linked_list_cycle")
 
 > Markdown uses email-style > characters for blockquoting.
 
