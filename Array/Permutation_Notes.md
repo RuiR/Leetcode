@@ -4,6 +4,6 @@ Next permutation is a process that rearranges numbers into the lexicographically
 
 ## Algorithms
 
-![Next Permutation Example](../images/next-permutation-algorithm.svg)
+![Next Permutation Example](https://www.nayuki.io/res/next-lexicographical-permutation-algorithm/next-permutation-algorithm.svg)
 
 ## Previous Permutation
