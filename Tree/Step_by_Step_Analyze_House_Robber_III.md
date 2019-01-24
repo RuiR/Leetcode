@@ -9,7 +9,7 @@ At first, the constraint of "two directly-linked houses can not be robbed at the
 
 This misunderstanding is partially caused by the example. So I failed in the case [4,1,null,2,null,3] where [4+3] is the largest profit instead of max(4+2, 1+3).
 
-```python
+```python3
 class Solution:
 
     def rob(self, root):
@@ -59,7 +59,7 @@ In my first try, there are two termination condition: node is null or node has 0
 2. Recursive
 There are two situations as we stated above, and we only return the maximum of the two situations.
 
-```python
+```python3
 class Solution:
     def rob(self, root):
         """
@@ -91,7 +91,7 @@ This method exceed time limit because it has many repeated operations. When we c
 We could use a hash table (dict in Python) to memorize the solved subproblems. The following code
 took 60 ms, faster than 85.47% of Python3 online submissions.
 
-```python
+```python3
 class Solution:
     def robNode(self, root):
         if not root:
@@ -124,3 +124,33 @@ class Solution:
         return self.robNode(root)
 
 ```
+
+## More information which can be recorded?
+
+As stated by **fun4LeetCode**, we have repeated problems, because we don't remember which scenario we choose for each tree root. So let's record both of the two scenarios in each node. The solution is even cleaner and faster than the previous one.
+
+```Python3
+class Solution:
+    def robNode(self, root):
+        if not root:
+            return [0,0]
+        left = self.robNode(root.left)
+        right = self.robNode(root.right)
+        child_max = max(left) + max(right)
+        root_max = root.val + left[0] + right[0]
+        return [child_max, root_max]
+
+    def rob(self, root):
+        """
+        :type root: TreeNode
+        :rtype: int
+        """
+        res = self.robNode(root)
+        return max(res)
+```
+
+## Conclusions
+When we get a new problem, we can start from the brute force solution, then try to figure out the points which can be optimized. For Dynamic Programming, think about:
+
+1. Optimal substructure leads to DP
+2. Memorize subproblems optimize DP
