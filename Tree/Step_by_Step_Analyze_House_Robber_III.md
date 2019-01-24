@@ -153,4 +153,4 @@ class Solution:
 When we get a new problem, we can start from the brute force solution, then try to figure out the points which can be optimized. For Dynamic Programming, think about:
 
 1. Optimal substructure leads to DP
-2. Memorize subproblems optimize DP
+2. Memorizing subproblems optimize DP
